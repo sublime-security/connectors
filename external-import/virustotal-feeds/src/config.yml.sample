@@ -1,0 +1,16 @@
+opencti:
+  url: 'ChangeMe'
+  token: 'ChangeMe'
+
+connector:
+  id: 'virustotal_feeds'
+  type: 'EXTERNAL_IMPORT'
+  name: 'VirusTotal Feeds'
+  scope: 'StixFile,Indicator,Incident'
+  create_indicator: False
+  log_level: 'info'
+
+virustotal_livehunt_notifications:
+  api_key: 'ChangeMe' # Private API Key
+  interval_sec: 300 # Time to wait in seconds between subsequent requests
+  enabled_feeds: 'domains,ipaddresses,files,urls' # The supported and enabled feeds to download

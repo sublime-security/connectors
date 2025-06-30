@@ -1,0 +1,15 @@
+version: '3'
+services:
+  connector-virustotal-feeds:
+    image: opencti/connector-virustotal-feeds:0.0.1
+    environment:
+      - OPENCTI_URL=http://opencti:8080
+      - OPENCTI_TOKEN=ChangeMe
+      - CONNECTOR_ID=Virustotal_Feeds
+      - "CONNECTOR_NAME=VirusTotal Feeds"
+      - CONNECTOR_SCOPE=StixFile,Indicator,Incident
+      - CONNECTOR_LOG_LEVEL=error
+      - VIRUSTOTAL_FEEDS_API_KEY=ChangeMe # Private API Key
+      - VIRUSTOTAL_FEEDS_INTERVAL_SEC=300 # Time to wait in seconds between subsequent requests
+      - VIRUSTOTAL_FEEDS_ENABLED_FEEDS="domains,ipaddresses,files,urls" # All enabled feed types to download
+    restart: always
